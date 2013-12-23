@@ -22,11 +22,14 @@
 		FC116F75185F4F9000D214EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC116F73185F4F9000D214EC /* InfoPlist.strings */; };
 		FC116F77185F4F9000D214EC /* DiscoverCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F76185F4F9000D214EC /* DiscoverCollectionViewTests.m */; };
 		FC116F82185F503E00D214EC /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F81185F503E00D214EC /* BaseCollectionView.m */; };
-		FC116F85185F5A1B00D214EC /* BaseTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F84185F5A1B00D214EC /* BaseTableLayout.m */; };
+		FC116F85185F5A1B00D214EC /* BaseFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F84185F5A1B00D214EC /* BaseFlowLayout.m */; };
 		FC116F87185F5A5E00D214EC /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC116F86185F5A5E00D214EC /* BaseCell.xib */; };
 		FC116F89185F601800D214EC /* AmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC116F88185F601800D214EC /* AmountCell.xib */; };
 		FC116F8C185F611700D214EC /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F8B185F611700D214EC /* BaseCell.m */; };
 		FC116F8F1860B0E200D214EC /* AmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F8E1860B0E200D214EC /* AmountCell.m */; };
+		FC116F9C18624E3900D214EC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116F9B18624E3900D214EC /* HeaderView.m */; };
+		FC116FA018624E7300D214EC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC116F9F18624E7300D214EC /* HeaderView.xib */; };
+		FC116FB01864DBA400D214EC /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC116FAF1864DBA400D214EC /* BaseCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,14 +64,19 @@
 		FC116F76185F4F9000D214EC /* DiscoverCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverCollectionViewTests.m; sourceTree = "<group>"; };
 		FC116F80185F503E00D214EC /* BaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionView.h; sourceTree = "<group>"; };
 		FC116F81185F503E00D214EC /* BaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionView.m; sourceTree = "<group>"; };
-		FC116F83185F5A1B00D214EC /* BaseTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableLayout.h; sourceTree = "<group>"; };
-		FC116F84185F5A1B00D214EC /* BaseTableLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableLayout.m; sourceTree = "<group>"; };
+		FC116F83185F5A1B00D214EC /* BaseFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFlowLayout.h; sourceTree = "<group>"; };
+		FC116F84185F5A1B00D214EC /* BaseFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFlowLayout.m; sourceTree = "<group>"; };
 		FC116F86185F5A5E00D214EC /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		FC116F88185F601800D214EC /* AmountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountCell.xib; sourceTree = "<group>"; };
 		FC116F8A185F611700D214EC /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
 		FC116F8B185F611700D214EC /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
 		FC116F8D1860B0E200D214EC /* AmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmountCell.h; sourceTree = "<group>"; };
 		FC116F8E1860B0E200D214EC /* AmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmountCell.m; sourceTree = "<group>"; };
+		FC116F9A18624E3900D214EC /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		FC116F9B18624E3900D214EC /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		FC116F9F18624E7300D214EC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		FC116FAE1864DBA400D214EC /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
+		FC116FAF1864DBA400D214EC /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,8 @@
 				FC116F5D185F4F9000D214EC /* Main.storyboard */,
 				FC116F60185F4F9000D214EC /* ViewController.h */,
 				FC116F61185F4F9000D214EC /* ViewController.m */,
+				FC116FAE1864DBA400D214EC /* BaseCollectionViewController.h */,
+				FC116FAF1864DBA400D214EC /* BaseCollectionViewController.m */,
 				FC116F63185F4F9000D214EC /* Images.xcassets */,
 				FC116F52185F4F9000D214EC /* Supporting Files */,
 				FC116F901860B6F500D214EC /* BaseCollectionView */,
@@ -176,6 +186,7 @@
 				FC116F81185F503E00D214EC /* BaseCollectionView.m */,
 				FC116F931860B73500D214EC /* Layouts */,
 				FC116F911860B70700D214EC /* Cells */,
+				FC116F9D18624E4800D214EC /* Headers/Footers */,
 			);
 			name = BaseCollectionView;
 			sourceTree = "<group>";
@@ -187,27 +198,45 @@
 				FC116F8B185F611700D214EC /* BaseCell.m */,
 				FC116F8D1860B0E200D214EC /* AmountCell.h */,
 				FC116F8E1860B0E200D214EC /* AmountCell.m */,
-				FC116F921860B71800D214EC /* Views */,
+				FC116F921860B71800D214EC /* UI */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		FC116F921860B71800D214EC /* Views */ = {
+		FC116F921860B71800D214EC /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				FC116F86185F5A5E00D214EC /* BaseCell.xib */,
 				FC116F88185F601800D214EC /* AmountCell.xib */,
 			);
-			name = Views;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		FC116F931860B73500D214EC /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				FC116F83185F5A1B00D214EC /* BaseTableLayout.h */,
-				FC116F84185F5A1B00D214EC /* BaseTableLayout.m */,
+				FC116F83185F5A1B00D214EC /* BaseFlowLayout.h */,
+				FC116F84185F5A1B00D214EC /* BaseFlowLayout.m */,
 			);
 			name = Layouts;
+			sourceTree = "<group>";
+		};
+		FC116F9D18624E4800D214EC /* Headers/Footers */ = {
+			isa = PBXGroup;
+			children = (
+				FC116F9E18624E5D00D214EC /* UI */,
+				FC116F9A18624E3900D214EC /* HeaderView.h */,
+				FC116F9B18624E3900D214EC /* HeaderView.m */,
+			);
+			name = Headers/Footers;
+			sourceTree = "<group>";
+		};
+		FC116F9E18624E5D00D214EC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FC116F9F18624E7300D214EC /* HeaderView.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +318,7 @@
 				FC116F87185F5A5E00D214EC /* BaseCell.xib in Resources */,
 				FC116F89185F601800D214EC /* AmountCell.xib in Resources */,
 				FC116F64185F4F9000D214EC /* Images.xcassets in Resources */,
+				FC116FA018624E7300D214EC /* HeaderView.xib in Resources */,
 				FC116F56185F4F9000D214EC /* InfoPlist.strings in Resources */,
 				FC116F5F185F4F9000D214EC /* Main.storyboard in Resources */,
 			);
@@ -310,11 +340,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC116F8F1860B0E200D214EC /* AmountCell.m in Sources */,
+				FC116FB01864DBA400D214EC /* BaseCollectionViewController.m in Sources */,
 				FC116F62185F4F9000D214EC /* ViewController.m in Sources */,
 				FC116F5C185F4F9000D214EC /* AppDelegate.m in Sources */,
+				FC116F9C18624E3900D214EC /* HeaderView.m in Sources */,
 				FC116F8C185F611700D214EC /* BaseCell.m in Sources */,
 				FC116F58185F4F9000D214EC /* main.m in Sources */,
-				FC116F85185F5A1B00D214EC /* BaseTableLayout.m in Sources */,
+				FC116F85185F5A1B00D214EC /* BaseFlowLayout.m in Sources */,
 				FC116F82185F503E00D214EC /* BaseCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +556,7 @@
 				FC116F7C185F4F9000D214EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC116F7D185F4F9000D214EC /* Build configuration list for PBXNativeTarget "DiscoverCollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +565,7 @@
 				FC116F7F185F4F9000D214EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

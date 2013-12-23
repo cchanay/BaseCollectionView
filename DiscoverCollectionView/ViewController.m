@@ -18,74 +18,57 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [collection setCollectionCellLayout: BaseCellType, AmountCellType, BaseCellType, AmountCellType, AmountCellType, nil];
+    
+    UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil] objectAtIndex:0];
+    UIView *footerView = [[[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil] objectAtIndex:0];
+    [collection setHeaderView:headerView];
+    [collection setFooterView:footerView];
+    
+    [collection setCollectionCellLayout: BaseCellType, nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Collection View Data Source Methods
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    // if memo then return 6, if not 5
+    return 5;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+-(UICollectionViewCell *)collectionView:(BaseCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collection dequeueReusableCellWithIndexPath:indexPath];
+    BaseCell *cell = (BaseCell *)[collectionView dequeueReusableCellWithIndexPath:indexPath];
+    switch (indexPath.row)
+    {
+        // Payee
+        case 0:
+            [cell setCellWithHeaderText:@"Payee" valueText:@"Chelsea" andDesciptionIndicatorHidden:YES];
+            break;
+        // Pay From
+        case 1:
+            [cell setCellWithHeaderText:@"Pay From" valueText:@"DC Checking 0413" andDesciptionIndicatorHidden:YES];
+            break;
+        // Amount
+        case 2:
+            [cell setCellWithHeaderText:@"Amount" valueText:@"$25.00" andDesciptionIndicatorHidden:YES];
+            break;
+        // Deliver By
+        case 3:
+            [cell setCellWithHeaderText:@"Deliver By" valueText:@"12/25/13" andDesciptionIndicatorHidden:YES];
+            break;
+        // Status
+        case 4:
+            [cell setCellWithHeaderText:@"Status" valueText:@"Scheduled" andDesciptionIndicatorHidden:YES];
+            break;
+        // Confirmation Number
+        case 5:
+            [cell setCellWithHeaderText:@"Confirmation Number" valueText:@"GK1WP-12345D" andDesciptionIndicatorHidden:YES];
+            break;
+        case 6:
+            [cell setCellWithHeaderText:@"Memo" valueText:@"I am a memo" andDesciptionIndicatorHidden:YES];
+    }
     return cell;
-}
-
-
-// Should not have to specify Delegate Methods.... Put into separate class.
-#pragma mark - Collection View Delegate Methods
-
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
-    UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
-
-    
-    NSArray *layoutPattern = [collection retrieveLayoutPattern];
-    NSString *cellClass = [layoutPattern objectAtIndex:(indexPath.row % layoutPattern.count)];
-
-    Class baseCell = NSClassFromString(cellClass);
-    
-    CGFloat baseSize = 0;
-    if ([baseCell isSubclassOfClass:[BaseCell class]])
-    {
-        baseSize = [baseCell cellHeight];
-    }
-    
-    //return CGSizeMake(screenWidth, baseSize);
-    
-    CGFloat screenWidth;
-    if(UIInterfaceOrientationIsPortrait(interfaceOrientation))
-    {
-        screenWidth = screenRect.size.width;
-        return CGSizeMake(screenWidth, baseSize);
-    }
-    else  // UIInterfaceOrientationIsLandscape
-    {
-        screenWidth = screenRect.size.height;
-        return CGSizeMake(screenWidth, baseSize);
-    }
-}
-
--(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 1.f;
-}
-
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    [collection.collectionViewLayout invalidateLayout];
 }
 
 @end

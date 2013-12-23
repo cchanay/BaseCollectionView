@@ -14,7 +14,6 @@
 
 @implementation BaseCollectionView
 
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -26,6 +25,12 @@
         {
             [self registerNibNamed:cellType forCellWithReuseIdentifier:cellType];
         }
+        
+        [self registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Supplementary"];
+        [self registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
+        [self registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer"];
+        
+        [self setCollectionCellLayout:BaseCellType, nil];  // Set Base Cell as the default collection layout
         
         [self setBackgroundColor:[UIColor whiteColor]];
         [self removeConstraints:self.constraints];
@@ -76,8 +81,25 @@
 - (void)registerNibNamed:(NSString*)nibName forCellWithReuseIdentifier:(NSString*)reuseId
 {
     UINib* nib = [UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]];
-    
     [self registerNib:nib forCellWithReuseIdentifier:reuseId];
+}
+
+-(UICollectionReusableView *)dequeueReusableSupplementaryViewForElementOfKind:(NSString *)elementKind forIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Supplementary" forIndexPath:indexPath];;
+    if (indexPath.section == 0 && [elementKind isEqualToString:UICollectionElementKindSectionHeader])
+    {
+        // Add header subview
+        reusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        [reusableView addSubview:self.headerView];
+    }
+    else if (indexPath.section == self.numberOfSections - 1 && [elementKind isEqualToString:UICollectionElementKindSectionFooter])
+    {
+        // Add footer subview
+        reusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+        [reusableView addSubview:self.footerView];
+    }
+    return reusableView;
 }
 
 -(UICollectionViewCell *)dequeueReusableCellWithIndexPath:(NSIndexPath*)indexPath

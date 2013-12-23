@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseCollectionView.h"
+#import "BaseCollectionViewController.h"
+#import "HeaderView.h"
 
-@interface ViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-{
-    IBOutlet BaseCollectionView *collection;
-}
+@interface ViewController : BaseCollectionViewController
+
 
 @end

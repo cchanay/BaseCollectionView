@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseTableLayout : UICollectionViewLayout
-
-@property int itemCount;
+@interface BaseFlowLayout : UICollectionViewFlowLayout <UICollectionViewDelegateFlowLayout>
 
 @end

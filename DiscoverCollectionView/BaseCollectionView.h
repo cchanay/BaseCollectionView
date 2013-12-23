@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
+
+@class BaseCollectionView;
 
 typedef enum
 {
@@ -20,8 +23,12 @@ typedef enum
     NSArray *layoutPattern;
 }
 
+@property UIView *headerView;
+@property UIView *footerView;
+
 -(void)setCollectionCellLayout:(kCollectionCellType)cellType, ... NS_REQUIRES_NIL_TERMINATION;
 -(UICollectionViewCell *)dequeueReusableCellWithIndexPath:(NSIndexPath*)indexPath;
+-(UICollectionReusableView *)dequeueReusableSupplementaryViewForElementOfKind:(NSString *)elementKind forIndexPath:(NSIndexPath *)indexPath;
 -(NSArray *)retrieveLayoutPattern;
 
 @end
